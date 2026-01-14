@@ -5,6 +5,7 @@ pkgdesc="WindowPet desktop overlay application (Git Version)"
 arch=('x86_64')
 url="https://github.com/SeakMengs/WindowPet"
 license=('MIT')
+maintainer="MeIsGaming <info@meisgaming.net>"
 depends=('sfml2' 'libx11' 'libxrandr' 'nodejs' 'yarn')
 makedepends=('git' 'cmake' 'nodejs' 'yarn' 'rustup' 'rust' 'cargo')
 provides=('windowpet')
@@ -19,25 +20,19 @@ pkgver() {
 }
 
 build() {
-  cd "$srcdir/WindowPet"
-
-  # Node/Yarn Dependencies
-  yarn install --frozen-lockfile --network-concurrency 16 --prefer-offline
-
+  cd "$srcdir/WindowPet/src-tauri"
 
   # Build frontend + Rust (Tauri)
   export CARGO_BUILD_JOBS=$(nproc)
   rustup default stable
-  yarn tauri build
+  cargo build --release
 }
 
 package() {
   cd "$srcdir/WindowPet"
 
-  # Install app binary (Tauri Linux build usually under src-tauri/target/release/)
-  install -Dm755 "src-tauri/target/release/windowpet" "$pkgdir/usr/bin/windowpet"
+  install -Dm755 "src-tauri/target/release/window_pet" "$pkgdir/usr/bin/windowpet"
 
-  # Optional: include desktop file / icons if vorhanden
-  install -Dm644 windowpet.desktop "$pkgdir/usr/share/applications/windowpet.desktop"
-  install -Dm644 assets/icon.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/windowpet.png"
+  install -Dm644 "../../windowpet.desktop" "$pkgdir/usr/share/applications/windowpet.desktop"
+
 }
