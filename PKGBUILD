@@ -11,8 +11,9 @@ makedepends=('git' 'cmake' 'nodejs' 'yarn' 'rustup' 'rust' 'cargo')
 provides=('windowpet')
 conflicts=('windowpet')
 
-source=("git+https://github.com/SeakMengs/WindowPet.git")
-sha256sums=('SKIP')
+source=("git+https://github.com/SeakMengs/WindowPet.git"
+        "pkg/windowpet.desktop")
+sha256sums=('SKIP' 'SKIP')
 
 pkgver() {
   cd "$srcdir/WindowPet"
