@@ -27,6 +27,7 @@ build() {
 
   # Build frontend + Rust (Tauri)
   export CARGO_BUILD_JOBS=$(nproc)
+  rustup default stable
   yarn tauri build
 }
 
