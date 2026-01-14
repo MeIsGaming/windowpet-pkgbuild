@@ -1,3 +1,4 @@
+# Maintainer: MeIsGaming <info@meisgaming.net>
 pkgname=windowpet-git
 pkgver=r101.aba8d3a
 pkgrel=1
