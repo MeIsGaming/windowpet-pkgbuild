@@ -1,5 +1,5 @@
 .git
-pkg/windowpet-git/
+pkg/
 node_modules/
 src-tauri/target/
 src/
