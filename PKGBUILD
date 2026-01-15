@@ -13,7 +13,7 @@ provides=('windowpet')
 conflicts=('windowpet')
 
 source=("git+https://github.com/SeakMengs/WindowPet.git"
-        "pkg/windowpet.desktop")
+        "https://raw.githubusercontent.com/MeIsGaming/windowpet-pkgbuild/refs/heads/main/windowpet.desktop")
 sha256sums=('SKIP' 'SKIP')
 
 pkgver() {
