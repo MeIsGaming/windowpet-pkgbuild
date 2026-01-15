@@ -20,7 +20,7 @@ pkgbase = windowpet-git
 	provides = windowpet
 	conflicts = windowpet
 	source = git+https://github.com/SeakMengs/WindowPet.git
-	source = pkg/windowpet.desktop
+	source = https://raw.githubusercontent.com/MeIsGaming/windowpet-pkgbuild/refs/heads/main/windowpet.desktop
 	sha256sums = SKIP
 	sha256sums = SKIP
 
